@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991686930183",
+    "project_id": "ecommerce-anly",
+    "storage_bucket": "ecommerce-anly.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991686930183:android:c51cd2fe5073452e4e5fa2",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_anly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmVAAtmwE07PwOubdl0B2FlNycbHcfyN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
