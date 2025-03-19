@@ -1,11 +1,20 @@
+import 'package:ecommerce_anly/data/auth/models/user_signin_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/forgot_password.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_anly/widgets/button/basic_reactive_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EnterPassword extends StatelessWidget {
+EnterPassword({super.key, required this.signinReq});
+
+final UserSigninReq signinReq;
+
+final TextEditingController _passwordCon = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,17 +23,20 @@ class EnterPassword extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           vertical: 40,
           horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _singinText(context),
-            const SizedBox(height: 16),
-            _passwordField(context),
-            const SizedBox(height: 16),
-             _continueButton(context),
-             const SizedBox(height: 16),
-           _forgotPassword(context),
-          ],
+        child: BlocProvider(
+          create: (context) => ButtonStateCubit(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _singinText(context),
+              const SizedBox(height: 16),
+              _passwordField(context),
+              const SizedBox(height: 16),
+               _continueButton(context),
+               const SizedBox(height: 16),
+             _forgotPassword(context),
+            ],
+          ),
         ),
       ),
     );
@@ -40,10 +52,9 @@ class EnterPassword extends StatelessWidget {
   }
 
    Widget _passwordField(BuildContext context){
-    return const TextField(
-      
-      decoration: InputDecoration(
-        // labelText: 'Email',
+    return  TextField(
+      controller: _passwordCon ,
+      decoration: const InputDecoration(
         hintText: 'Enter your password',
         border: OutlineInputBorder()
       ),
@@ -51,7 +62,7 @@ class EnterPassword extends StatelessWidget {
    }
 
     Widget _continueButton(BuildContext context){
-      return BasicAppButton(
+      return BasicReactiveButton(
         text: 'Continue', 
         onPressed: (){});
     }

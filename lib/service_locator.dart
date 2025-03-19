@@ -3,6 +3,7 @@ import 'package:ecommerce_anly/data/auth/repository/auth_repository_impl.dart';
 import 'package:ecommerce_anly/data/auth/source/auth_firebase_service.dart';
 import 'package:ecommerce_anly/domain/auth/repository/auth.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/get_ages.dart';
+import 'package:ecommerce_anly/domain/auth/useCase/signin.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
 import 'package:get_it/get_it.dart';
 
@@ -30,6 +31,10 @@ sl.registerSingleton<AuthRepository>(
 
 sl.registerSingleton<GetAgesUseCase>(
     GetAgesUseCase()
+ );
+
+ sl.registerSingleton<SigninUseCase>(
+    SigninUseCase()
  );
 
 }
