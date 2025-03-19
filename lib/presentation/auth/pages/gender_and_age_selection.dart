@@ -2,7 +2,6 @@ import 'package:ecommerce_anly/bloc/button/button_state.dart';
 import 'package:ecommerce_anly/bloc/button/button_state_cubit.dart';
 import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/data/auth/models/user_creation_req.dart';
-import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
 import 'package:ecommerce_anly/helpers/bottomsheet/app_bottomsheet.dart';
 import 'package:ecommerce_anly/presentation/auth/blog/age_selection_cubit.dart';
 import 'package:ecommerce_anly/presentation/auth/blog/ages_display_cubit.dart';
@@ -183,12 +182,11 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
           builder: (context) {
             return BasicReactiveButton(
               onPressed: (){
-                //  userCreationReq.gender = context.read<GenderSelectionCubit>().selectedIndex;
-                //  userCreationReq.age = context.read<AgeSelectionCubit>().selectedAge;
-                //  context.read<ButtonStateCubit>().execute(
-                //    usecase: SignupUseCase(),
-                //    params: userCreationReq
-                //  );
+                  userCreationReq.gender = context.read<GenderSelectionCubit>().selectedIndex;
+                  userCreationReq.age = context.read<AgeSelectionCubit>().selectedAge;
+                  context.read<ButtonStateCubit>().execute(
+                    params: userCreationReq
+                  );
               },
               text: 'Finish'
             );

@@ -1,6 +1,5 @@
 import 'package:ecommerce_anly/data/auth/models/user_creation_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
-import 'package:ecommerce_anly/presentation/auth/pages/enter_password.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/gender_and_age_selection.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/signin.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';

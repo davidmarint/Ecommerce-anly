@@ -7,10 +7,8 @@ import 'package:ecommerce_anly/service_locator.dart';
 class AuthRepositoryImpl extends AuthRepository {
 
   @override
-  Future<Either> signUp(UserCreationReq user) async {
-
+  Future<Either<String, String>> signUp(UserCreationReq user) async {
     return await sl<AuthFirebaseService>().signUp(user);
-
   }
   
   @override
