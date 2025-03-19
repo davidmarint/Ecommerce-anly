@@ -2,17 +2,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_anly/data/auth/models/user_creation_req.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 abstract class AuthFirebaseService {
-  Future<Either> signUp(UserCreationReq user);
+  Future<Either<String, String>> signUp(UserCreationReq user);
     Future<Either> getAges();
 
 }
 
 class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
-  Future<Either> signUp(UserCreationReq user) async {
+  Future<Either<String, String>> signUp(UserCreationReq user) async {
     try {
       var data = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: user.email!, password: user.password!);
