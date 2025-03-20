@@ -4,7 +4,6 @@ import 'package:ecommerce_anly/presentation/auth/pages/enter_password.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/signup.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_app_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

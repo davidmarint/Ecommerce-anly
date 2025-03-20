@@ -10,7 +10,7 @@ class ButtonStateCubit extends Cubit<ButtonState>{
    Future<void> execute({dynamic params}) async {
     emit(ButtonLoadingState());
     try{
-    Either returnedData = await SignupUseCase.call(params: params);
+    Either returnedData = await SignupUseCase().call(params: params);
     
     returnedData.fold(
       (message) => emit(
