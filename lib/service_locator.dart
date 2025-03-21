@@ -3,6 +3,7 @@ import 'package:ecommerce_anly/data/auth/repository/auth_repository_impl.dart';
 import 'package:ecommerce_anly/data/auth/source/auth_firebase_service.dart';
 import 'package:ecommerce_anly/domain/auth/repository/auth.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/get_ages.dart';
+import 'package:ecommerce_anly/domain/auth/useCase/is_logged_in.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/send_password_reset_email.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signin.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
@@ -41,5 +42,10 @@ sl.registerSingleton<GetAgesUseCase>(
  sl.registerSingleton<SendPasswordUseCase>(
     SendPasswordUseCase()
  );
+
+sl.registerSingleton<IsLoggedInUseCase>(
+    IsLoggedInUseCase()
+ );
+
 
 }

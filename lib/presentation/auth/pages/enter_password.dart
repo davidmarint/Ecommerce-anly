@@ -3,6 +3,7 @@ import 'package:ecommerce_anly/bloc/button/button_state_signin_cubit.dart';
 import 'package:ecommerce_anly/data/auth/models/user_signin_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/forgot_password.dart';
+import 'package:ecommerce_anly/presentation/home/pages/home.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_signin_button.dart';
 import 'package:flutter/gestures.dart';
@@ -33,7 +34,7 @@ final TextEditingController _passwordCon = TextEditingController();
                 ScaffoldMessenger.of(context).showSnackBar(snackbar);
               }
               if (state is ButtonSuccessState){
-                AppNavigator().push(context, ForgotPasswordPage());
+                AppNavigator.pushAndRemove(context, const HomePage());
               }
             },
             child: Column(

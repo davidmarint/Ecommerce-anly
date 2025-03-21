@@ -9,7 +9,7 @@ abstract class AuthFirebaseService {
   Future<Either> signIn(UserSigninReq user);
   Future<Either> getAges();
   Future<Either> sendPasswordResetEmail(String email);
-
+  Future<bool> isLoggedIn();
 }
 
 class AuthFirebaseServiceImpl implements AuthFirebaseService {
@@ -55,10 +55,18 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> signIn(UserSigninReq user) async {
     try {
+      // await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
        await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: user.email!, password: user.password!);
 
-      return const Right('Sing In was Successfull');
+      
+     User? currentUser = FirebaseAuth.instance.currentUser;
+    if (currentUser != null) {
+      print("Usuario autenticado correctamente: ${currentUser.uid}");
+      return const Right('Sign In was Successful');
+    } else {
+      return Left('Error: La sesión no se mantuvo correctamente.');
+    }
     } on FirebaseAuthException catch (e) {
       String message = '';
 
@@ -79,5 +87,15 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
     }catch(e){
       return const Left('Please try again later');
     }
+  }
+  
+  @override
+  Future<bool> isLoggedIn() async {
+    await Future.delayed(const Duration(seconds: 1));
+    if(FirebaseAuth.instance.currentUser != null){
+      return true;
+  } else {
+    return false;
+  }
   }
 }

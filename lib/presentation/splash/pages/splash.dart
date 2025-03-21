@@ -1,5 +1,7 @@
 import 'package:ecommerce_anly/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/signin.dart';
+import 'package:ecommerce_anly/presentation/home/pages/home.dart';
 import 'package:ecommerce_anly/presentation/splash/bloc/splash_cubit.dart';
 import 'package:ecommerce_anly/presentation/splash/bloc/splash_state.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +14,9 @@ class SplashPage extends StatelessWidget {
     return BlocListener<SplashCubit, SplashState>(
         listener: (context, state) {
           if(state is UnAuthenticated) {
-            Navigator.pushReplacement(
-              context, 
-              MaterialPageRoute(builder: (context)=> SignInPage())
-              );
+            AppNavigator.pushReplacement(context, SignInPage());
           } else if(state is Authenticated) {
-            Navigator.pushNamed(context, '/home');
+            AppNavigator.pushReplacement(context, const HomePage());
 
           }
         },

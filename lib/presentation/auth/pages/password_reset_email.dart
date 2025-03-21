@@ -42,7 +42,7 @@ class PasswordResetEmailPage extends StatelessWidget {
   Widget _returnToLoginButton(BuildContext context) {
     return BasicAppButton(
       onPressed: (){
-        AppNavigator().pushReplacement(context, SignInPage());
+        AppNavigator.pushReplacement(context, SignInPage());
       },
       width: 200,
       text: 'Return to Login'
