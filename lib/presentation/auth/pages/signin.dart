@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
    
-  final TextEditingController _emailCon = TextEditingController();
+  final TextEditingController _emailCon = TextEditingController(text: 'maicolmarin0126@gmail.com');
   @override
   Widget build(BuildContext context) {
 

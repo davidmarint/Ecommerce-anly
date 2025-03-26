@@ -4,4 +4,5 @@ class AppVectors {
   static const formant = '.svg'; 
   static const appLogo = '${basePath}logo$formant';
   static const emailSending = '${basePath}email_sending$formant';
+  static const bag = '${basePath}bag$formant';
 }
