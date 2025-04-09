@@ -3,6 +3,8 @@ import 'package:ecommerce_anly/data/auth/repository/auth_repository_impl.dart';
 import 'package:ecommerce_anly/data/auth/source/auth_firebase_service.dart';
 import 'package:ecommerce_anly/data/category/repository/category.dart';
 import 'package:ecommerce_anly/data/category/source/category_firebase_sevice.dart';
+import 'package:ecommerce_anly/data/product/repository/product.dart';
+import 'package:ecommerce_anly/data/product/source/product_firebase_service.dart';
 import 'package:ecommerce_anly/domain/auth/repository/auth.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/get_ages.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/get_user.dart';
@@ -12,6 +14,8 @@ import 'package:ecommerce_anly/domain/auth/useCase/signin.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
 import 'package:ecommerce_anly/domain/category/repository/category.dart';
 import 'package:ecommerce_anly/domain/category/usecases/get_categories.dart';
+import 'package:ecommerce_anly/domain/product/repository/product.dart';
+import 'package:ecommerce_anly/domain/product/usecases/get_top_selling.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -27,6 +31,11 @@ sl.registerSingleton<AuthFirebaseService>(
 sl.registerSingleton<CategoryFirebaseSevice>(
   CategoryFirebaseSeviceImpl()
 );
+
+sl.registerSingleton<ProductFirebaseService>(
+  ProductFirebaseServiceImpl()
+);
+
 //repositories
 
 sl.registerSingleton<AuthRepository>(
@@ -35,6 +44,9 @@ sl.registerSingleton<AuthRepository>(
 
 sl.registerSingleton<CategoryRepository>(
   CategoryRepositoryImpl());
+
+sl.registerSingleton<ProductRepository>(
+  ProductRepositoryImpl());
 
 //usecases
 
@@ -65,5 +77,10 @@ sl.registerSingleton<IsLoggedInUseCase>(
 sl.registerSingleton<GetCategoriesUseCase>(
     GetCategoriesUseCase()
  );
+
+sl.registerSingleton<GetTopSellingUseCase>(
+    GetTopSellingUseCase()
+ );
+ 
 
 }
