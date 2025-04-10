@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 abstract class ProductRepository {
  
  Future<Either> getTopSelling();
+ Future<Either> getNewIn();
   // Future<List<Product>> getAllProducts();
   // Future<Product> getProductById(String id);
   // Future<void> addProduct(Product product);
