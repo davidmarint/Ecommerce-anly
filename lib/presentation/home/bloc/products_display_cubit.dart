@@ -5,9 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsDisplayCubit extends Cubit<ProductsDisplayState> {
   final Usecase useCase;
-  ProductsDisplayCubit({required this.useCase}) : super(ProductsLoading());
+  ProductsDisplayCubit({required this.useCase}) : super(ProductsInitialState());
 
   void displayProducts({dynamic params}) async{
+   emit(ProductsLoading());
     var returnedData = await useCase.call(
       params: params,
     );
@@ -19,6 +20,12 @@ class ProductsDisplayCubit extends Cubit<ProductsDisplayState> {
         emit(ProductsLoaded(products));
       },
     ); 
+  }
+
+  void displayInitial() {
+    emit(
+      ProductsInitialState()
+    );
   }
 
 }

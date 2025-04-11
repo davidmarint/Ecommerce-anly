@@ -6,4 +6,5 @@ class AppVectors {
   static const emailSending = '${basePath}email_sending$formant';
   static const bag = '${basePath}bag$formant';
   static const search = '${basePath}search$formant';
+  static const notFound = '${basePath}not_found$formant';
 }
