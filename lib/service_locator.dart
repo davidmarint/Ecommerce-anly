@@ -17,6 +17,7 @@ import 'package:ecommerce_anly/domain/category/usecases/get_categories.dart';
 import 'package:ecommerce_anly/domain/product/repository/product.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_new_in.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_category.dart';
+import 'package:ecommerce_anly/domain/product/usecases/get_products_by_title.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_top_selling.dart';
 import 'package:get_it/get_it.dart';
 
@@ -90,5 +91,9 @@ sl.registerSingleton<GetNewInUseCase>(
 
 sl.registerSingleton<GetProductsByCategoryUseCase>(
     GetProductsByCategoryUseCase()
+ );
+
+sl.registerSingleton<GetProductsByTitleUseCase>(
+    GetProductsByTitleUseCase()
  );
 }
