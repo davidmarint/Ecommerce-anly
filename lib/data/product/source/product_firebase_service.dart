@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 abstract class ProductFirebaseService {
   Future<Either> getTopSelling();
    Future<Either> getNewIn();
+   Future<Either> getProductsBycategoryId(String categoryId);
 }
 
 class ProductFirebaseServiceImpl extends ProductFirebaseService {
@@ -33,6 +34,22 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
               2025,2,15
             )
           ))
+          .get();
+
+      return Right(returnData.docs.map((e)=> e.data()).toList());
+    } catch (e) {
+      return const Left(
+        'Please try again '
+      );
+    }
+  }
+  
+  @override
+  Future<Either> getProductsBycategoryId(String categoryId) async {
+   try {
+      var returnData = await FirebaseFirestore.instance
+          .collection('Products')
+          .where('categoryId', isEqualTo: categoryId)
           .get();
 
       return Right(returnData.docs.map((e)=> e.data()).toList());
