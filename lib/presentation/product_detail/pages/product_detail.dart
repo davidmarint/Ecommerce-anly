@@ -60,12 +60,12 @@ class ProductDetailPage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                SelectedColor(
-                  productEntity: productEntity,
-                ),
-                 const SizedBox(
-                  height: 10,
-                ),
+                 SelectedColor(
+                   productEntity: productEntity,
+                 ),
+                  const SizedBox(
+                   height: 10,
+                 ),
                 ProductQuantity(productEntity: productEntity)
               ],
             ),
