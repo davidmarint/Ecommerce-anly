@@ -93,5 +93,4 @@ class ColorModel {
     required this.title,
     required this.rgb,
   });
-
 }
