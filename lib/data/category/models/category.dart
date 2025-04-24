@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:ecommerce_anly/domain/category/entity/category.dart';
+import 'package:ecommerce_anly/domain/category/entities/category.dart';
 
 class CategoryModel {
 

@@ -1,4 +1,4 @@
-import 'package:ecommerce_anly/domain/category/entity/category.dart';
+import 'package:ecommerce_anly/domain/category/entities/category.dart';
 import 'package:ecommerce_anly/domain/product/entities/products.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_category.dart';
 import 'package:ecommerce_anly/presentation/home/bloc/products_display_cubit.dart';
