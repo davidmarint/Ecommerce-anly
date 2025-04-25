@@ -47,7 +47,6 @@ class ProductRepositoryImpl extends ProductRepository {
   @override
   Future<Either> getProductsByTitle(String title) async {
     var returnData = await sl<ProductFirebaseService>().getProductsByTitle(title);
-
     return returnData.fold((error) {
       return Left(error);
     }, (data) {
