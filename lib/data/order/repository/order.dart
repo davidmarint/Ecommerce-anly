@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_anly/data/order/models/add_to_card_req.dart';
+import 'package:ecommerce_anly/data/order/models/order_registration_req.dart';
 import 'package:ecommerce_anly/data/order/models/product_ordered.dart';
 import 'package:ecommerce_anly/data/order/source/order_firebase_service.dart';
 import 'package:ecommerce_anly/domain/order/repository/order.dart';
@@ -20,6 +21,26 @@ class OrderRepositoryImpl extends OrderRepository{
       return Right(List.from(data)
           .map((e) => ProductOrderedModel.fromMap(e).toEntity())
           .toList());
+    });
+  }
+  
+  @override
+  Future<Either> removeCartProduct(String id) async {
+ var returnData = await sl<OrderFirebaseService>().removeCartProduct(id);
+    return returnData.fold((error) {
+      return Left(error);
+    }, (message) {
+      return Right(message);
+    });
+  }
+
+  @override
+  Future<Either> orderRegistration(OrderRegistrationReq order) async {
+   var returnData = await sl<OrderFirebaseService>().orderRegistration(order);
+    return returnData.fold((error) {
+      return Left(error);
+    }, (message) {
+      return Right(message);
     });
   }
 }

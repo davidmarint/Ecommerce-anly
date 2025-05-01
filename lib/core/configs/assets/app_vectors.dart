@@ -7,4 +7,5 @@ class AppVectors {
   static const bag = '${basePath}bag$formant';
   static const search = '${basePath}search$formant';
   static const notFound = '${basePath}not_found$formant';
+  static const emptyCart = '${basePath}cart_bag$formant';
 }

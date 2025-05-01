@@ -19,6 +19,8 @@ import 'package:ecommerce_anly/domain/category/usecases/get_categories.dart';
 import 'package:ecommerce_anly/domain/order/repository/order.dart';
 import 'package:ecommerce_anly/domain/order/usecases/add_to_card.dart';
 import 'package:ecommerce_anly/domain/order/usecases/get_cart_products.dart';
+import 'package:ecommerce_anly/domain/order/usecases/order_registration.dart';
+import 'package:ecommerce_anly/domain/order/usecases/remove_cart_products.dart';
 import 'package:ecommerce_anly/domain/product/repository/product.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_new_in.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_category.dart';
@@ -117,4 +119,13 @@ sl.registerSingleton<AddToCardUseCase>(
  sl.registerSingleton<GetCartProductsUseCase>(
     GetCartProductsUseCase()
  );
+
+  sl.registerSingleton<RemoveCartproductsUseCase>(
+      RemoveCartproductsUseCase()
+  );
+
+  sl.registerSingleton<OrderRegistrationUseCase>(
+      OrderRegistrationUseCase()
+  );
+
 }

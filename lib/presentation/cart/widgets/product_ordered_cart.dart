@@ -82,7 +82,7 @@ class ProductOrderedCard extends StatelessWidget {
                     ),
                      GestureDetector(
                        onTap: () {
-                        //context.read<CartProductsDisplayCubit>().removeProduct(productOrderedEntity);
+                        context.read<CartProductsDisplayCubit>().removeCartProduct(productOrderedEntity);
                        },
                        child: Container(
                          height: 23,

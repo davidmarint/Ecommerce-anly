@@ -8,6 +8,7 @@ class ProductOrderedModel {
   final double totalPrice;
   final String productImageUrl;
   final String createdDate;
+  final String id;
 
   ProductOrderedModel({
     required this.productId, 
@@ -17,6 +18,7 @@ class ProductOrderedModel {
     required this.totalPrice,
     required this.productImageUrl,
     required this.createdDate,
+    required this.id,
     });
 
     factory ProductOrderedModel.fromMap(Map<String, dynamic> map) {
@@ -28,14 +30,42 @@ class ProductOrderedModel {
       totalPrice: map['totalPrice'] as double ?? 0.0,
       productImageUrl: map['productImageUrl']  ?.toString() ?? '',
       createdDate: map['createdDate'] ?? '',
-      //id: map['id'] as String,
+      id: map['id'] ?? '',
+    );
+  }
+
+   Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'productId': productId,
+      'productTitle': productTitle,
+      'productQuantity': productQuantity,
+      'productPrice': productPrice,
+      'totalPrice': totalPrice,
+      'productImage': productImageUrl,
+      'createdDate': createdDate,
+      'id': id,
+    };
+  }
+}
+
+extension ProductOrderedXModel on ProductOrderedModel {
+  ProductOrderedEntity toEntity() {
+    return ProductOrderedEntity(
+      productId: productId, 
+      productTitle: productTitle, 
+      productQuantity: productQuantity, 
+      productPrice: productPrice, 
+      totalPrice: totalPrice, 
+      productImageUrl: productImageUrl, 
+      createdDate: createdDate,
+      id: id
     );
   }
 }
 
-extension ProductOrderedModelX on ProductOrderedModel {
-  ProductOrderedEntity toEntity() {
-    return ProductOrderedEntity (
+extension ProductOrderedXEntity on ProductOrderedEntity {
+  ProductOrderedModel fromEntity() {
+    return ProductOrderedModel (
       productId: productId,
       productTitle: productTitle,
       productQuantity: productQuantity,
@@ -43,6 +73,7 @@ extension ProductOrderedModelX on ProductOrderedModel {
       totalPrice: totalPrice,
       productImageUrl: productImageUrl,
       createdDate: createdDate,
+      id: id,
     );
   }
 }
