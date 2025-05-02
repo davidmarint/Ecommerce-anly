@@ -1,6 +1,6 @@
 import 'package:ecommerce_anly/bloc/categories/categories_display_cubit.dart';
 import 'package:ecommerce_anly/bloc/categories/categories_display_state.dart';
-import 'package:ecommerce_anly/domain/category/entity/category.dart';
+import 'package:ecommerce_anly/domain/category/entities/category.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/all_categories/pages/all_categories.dart';
 import 'package:flutter/material.dart';

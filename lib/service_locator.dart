@@ -3,6 +3,8 @@ import 'package:ecommerce_anly/data/auth/repository/auth_repository_impl.dart';
 import 'package:ecommerce_anly/data/auth/source/auth_firebase_service.dart';
 import 'package:ecommerce_anly/data/category/repository/category.dart';
 import 'package:ecommerce_anly/data/category/source/category_firebase_sevice.dart';
+import 'package:ecommerce_anly/data/order/repository/order.dart';
+import 'package:ecommerce_anly/data/order/source/order_firebase_service.dart';
 import 'package:ecommerce_anly/data/product/repository/product.dart';
 import 'package:ecommerce_anly/data/product/source/product_firebase_service.dart';
 import 'package:ecommerce_anly/domain/auth/repository/auth.dart';
@@ -14,6 +16,11 @@ import 'package:ecommerce_anly/domain/auth/useCase/signin.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
 import 'package:ecommerce_anly/domain/category/repository/category.dart';
 import 'package:ecommerce_anly/domain/category/usecases/get_categories.dart';
+import 'package:ecommerce_anly/domain/order/repository/order.dart';
+import 'package:ecommerce_anly/domain/order/usecases/add_to_card.dart';
+import 'package:ecommerce_anly/domain/order/usecases/get_cart_products.dart';
+import 'package:ecommerce_anly/domain/order/usecases/order_registration.dart';
+import 'package:ecommerce_anly/domain/order/usecases/remove_cart_products.dart';
 import 'package:ecommerce_anly/domain/product/repository/product.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_new_in.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_category.dart';
@@ -39,6 +46,10 @@ sl.registerSingleton<ProductFirebaseService>(
   ProductFirebaseServiceImpl()
 );
 
+sl.registerSingleton<OrderFirebaseService>(
+  OrderFirebaseServiceImpl()
+);
+
 //repositories
 
 sl.registerSingleton<AuthRepository>(
@@ -50,6 +61,10 @@ sl.registerSingleton<CategoryRepository>(
 
 sl.registerSingleton<ProductRepository>(
   ProductRepositoryImpl());
+
+sl.registerSingleton<OrderRepository>(
+  OrderRepositoryImpl());
+
 
 //usecases
 
@@ -96,4 +111,21 @@ sl.registerSingleton<GetProductsByCategoryUseCase>(
 sl.registerSingleton<GetProductsByTitleUseCase>(
     GetProductsByTitleUseCase()
  );
+
+sl.registerSingleton<AddToCardUseCase>(
+    AddToCardUseCase()
+ );
+
+ sl.registerSingleton<GetCartProductsUseCase>(
+    GetCartProductsUseCase()
+ );
+
+  sl.registerSingleton<RemoveCartproductsUseCase>(
+      RemoveCartproductsUseCase()
+  );
+
+  sl.registerSingleton<OrderRegistrationUseCase>(
+      OrderRegistrationUseCase()
+  );
+
 }

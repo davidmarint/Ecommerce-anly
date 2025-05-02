@@ -1,14 +1,12 @@
-
-
 import 'package:ecommerce_anly/bloc/button/button_state.dart';
-import 'package:ecommerce_anly/bloc/button/button_state_cubit.dart';
 import 'package:ecommerce_anly/bloc/button/button_state_generic_cubit.dart';
+import 'package:ecommerce_anly/data/order/models/add_to_card_req.dart';
+import 'package:ecommerce_anly/domain/order/usecases/add_to_card.dart';
 import 'package:ecommerce_anly/domain/product/entities/products.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/helpers/product/product_price.dart';
-import 'package:ecommerce_anly/presentation/home/pages/home.dart';
+import 'package:ecommerce_anly/presentation/cart/pages/cart.dart';
 import 'package:ecommerce_anly/presentation/product_detail/bloc/product_quantity_cubit.dart';
-import 'package:ecommerce_anly/widgets/button/basic_reactive_button.dart';
 import 'package:ecommerce_anly/widgets/button/basic_reactive_generic_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +23,7 @@ class AddToBag extends StatelessWidget {
     return BlocListener<ButtonStateGenericCubit,ButtonState>(
       listener: (context, state) {
         if (state is ButtonSuccessState) {
-          AppNavigator().push(context, const HomePage());
+          AppNavigator().push(context, const CartPage());
         } 
         if (state is ButtonFailureState) {
           var snackbar = SnackBar(content: Text(state.errorMessage),behavior: SnackBarBehavior.floating,);
@@ -36,20 +34,18 @@ class AddToBag extends StatelessWidget {
         padding: const EdgeInsets.all(16),
           child: BasicReactiveGenericButton(
             onPressed: () {
-            //   context.read<ButtonStateCubit>().execute(
-            //     usecase: AddToCartUseCase(),
-            //     params: AddToCartReq(
-            //       productId: productEntity.productId, 
-            //       productTitle: productEntity.title,
-            //       productQuantity: context.read<ProductQuantityCubit>().state,
-            //       productColor: productEntity.colors[context.read<ProductColorSelectionCubit>().selectedIndex].title,
-            //       productSize: productEntity.sizes[context.read<ProductSizeSelectionCubit>().selectedIndex],
-            //       productPrice: productEntity.price.toDouble(), 
-            //       totalPrice: ProductPriceHelper.provideCurrentPrice(productEntity) * context.read<ProductQuantityCubit>().state,
-            //       productImage: productEntity.images[0],
-            //       createdDate: DateTime.now().toString()
-            //     )
-            //  );
+               context.read<ButtonStateGenericCubit>().execute(
+                 usecase: AddToCardUseCase(),
+                 params: AddToCardReq(
+                   productId: productEntity.productId, 
+                   productTitle: productEntity.title,
+                   productQuantity: context.read<ProductQuantityCubit>().state,
+                   productPrice: productEntity.price.toDouble(), 
+                   totalPrice: ProductPriceHelper.provideCurrentPrice(productEntity) * context.read<ProductQuantityCubit>().state,
+                   productImageUrl: productEntity.images[0],
+                   createdDate: DateTime.now().toString()
+                 )
+              );
             },
             content: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

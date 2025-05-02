@@ -10,11 +10,11 @@ import 'package:ecommerce_anly/presentation/product_detail/widgets/product_image
 import 'package:ecommerce_anly/presentation/product_detail/widgets/product_price.dart';
 import 'package:ecommerce_anly/presentation/product_detail/widgets/product_quantity.dart';
 import 'package:ecommerce_anly/presentation/product_detail/widgets/product_title.dart';
-import 'package:ecommerce_anly/presentation/product_detail/widgets/selected_color.dart';
-import 'package:ecommerce_anly/presentation/product_detail/widgets/selected_size.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+//import 'package:ecommerce_anly/presentation/product_detail/widgets/selected_color.dart';
+//import 'package:ecommerce_anly/presentation/product_detail/widgets/selected_size.dart';
 
 class ProductDetailPage extends StatelessWidget {
   const ProductDetailPage({super.key, required this.productEntity});
@@ -54,18 +54,18 @@ class ProductDetailPage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                SelectedSize(
-                  productEntity: productEntity,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                 SelectedColor(
-                   productEntity: productEntity,
-                 ),
-                  const SizedBox(
-                   height: 10,
-                 ),
+                // SelectedSize(
+                //   productEntity: productEntity,
+                // ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
+                //  SelectedColor(
+                //    productEntity: productEntity,
+                //  ),
+                //   const SizedBox(
+                //    height: 10,
+                //  ),
                 ProductQuantity(productEntity: productEntity)
               ],
             ),
