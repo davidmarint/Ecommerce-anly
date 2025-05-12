@@ -22,10 +22,13 @@ import 'package:ecommerce_anly/domain/order/usecases/get_cart_products.dart';
 import 'package:ecommerce_anly/domain/order/usecases/order_registration.dart';
 import 'package:ecommerce_anly/domain/order/usecases/remove_cart_products.dart';
 import 'package:ecommerce_anly/domain/product/repository/product.dart';
+import 'package:ecommerce_anly/domain/product/usecases/add_or_remove_favorite_product.dart';
+import 'package:ecommerce_anly/domain/product/usecases/get_favorites_products.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_new_in.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_category.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_products_by_title.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_top_selling.dart';
+import 'package:ecommerce_anly/domain/product/usecases/is_favorite.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -128,4 +131,13 @@ sl.registerSingleton<AddToCardUseCase>(
       OrderRegistrationUseCase()
   );
 
+  sl.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
+      AddOrRemoveFavoriteProductUseCase()
+  );
+  sl.registerSingleton<IsFavoriteUseCase>(
+      IsFavoriteUseCase()
+  );
+  sl.registerSingleton<GetFavortiesProductsUseCase>(
+      GetFavortiesProductsUseCase()
+  );
 }
