@@ -1,5 +1,8 @@
 import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_anly/domain/order/entities/order.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
+import 'package:ecommerce_anly/presentation/settings/bloc/order_display_cubit.dart';
+import 'package:ecommerce_anly/presentation/settings/bloc/order_display_state.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +20,7 @@ class MyOrdersPage extends StatelessWidget {
         ),
         body: BlocProvider(
           create: (context) => OrdersDisplayCubit()..displayOrders(),
-          child: BlocBuilder<OrdersDisplayCubit,OrdersDisplayState>(
+          child: BlocBuilder<OrdersDisplayCubit,OrderDisplayState>(
             builder: (context, state) {
               if (state is OrdersLoading) {
                 return const Center(
@@ -27,11 +30,10 @@ class MyOrdersPage extends StatelessWidget {
               if (state is OrdersLoaded){
                 return _orders(state.orders);
               }
-
               if (state is LoadOrdersFailure){
                 return Center(
                   child: Text(
-                    state.errorMessage
+                    state.message
                   ),
                 );
               }
@@ -48,10 +50,10 @@ class MyOrdersPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: (){
-              AppNavigator().push(
-                context, 
-                OrderDetailPage(orderEntity: orders[index],)
-              );
+              // AppNavigator().push(
+              //   context, 
+              //   OrderDetailPage(orderEntity: orders[index],)
+              // );
             },
             child: Container(
               height: 70,

@@ -1,5 +1,6 @@
 import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
+import 'package:ecommerce_anly/presentation/settings/pages/my_orders.dart';
 import 'package:flutter/material.dart';
 
 class MyOrdersTile extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyOrdersTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        //AppNavigator().push(context, const MyOrdersPage());
+        AppNavigator().push(context, const MyOrdersPage());
       },
       child: Container(
         height: 70,

@@ -15,7 +15,7 @@ class OrderStatusModel {
     return OrderStatusModel(
       title: map['title'] ?? '',
       done: map['done'] as bool,
-      createDate: map['createdDate'] as Timestamp
+      createDate: map['createdDate'] != null ? map['createdDate'] as Timestamp: Timestamp.now(),
     );
   }
 }

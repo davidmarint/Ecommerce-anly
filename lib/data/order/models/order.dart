@@ -22,21 +22,23 @@ class OrderModel{
     });
 
 
-  factory OrderModel.fromMap(Map<String, dynamic> map) {
-    return OrderModel(
-      products: List < ProductOrderedModel >.from(
-        map['products'].map((e) => ProductOrderedModel.fromMap(e))
-      ),
-      createdDate: map['createdDate']?? '',
-      shippingAddress: map['shippingAddress'] ?? '',
-      itemCount: map['itemCount'] as int,
-      totalPrice: map['totalPrice'] as double,
-      code: map['code'] ?? '',
-      orderStatus: List < OrderStatusModel >.from(
-        map['orderStatus'].map((e) => OrderStatusModel.fromMap(e))
-      ),
-    );
-  }
+ factory OrderModel.fromMap(Map<String, dynamic> map) {
+  return OrderModel(
+    products: map['products'] != null
+        ? List<ProductOrderedModel>.from(
+            (map['products'] as List).map((e) => ProductOrderedModel.fromMap(e)))
+        : [],
+    createdDate: map['createdDate'] ?? '',
+    shippingAddress: map['shippingAddress'] ?? '',
+    itemCount: map['itemCount'] ?? 0,
+    totalPrice: (map['totalPrice'] ?? 0).toDouble(),
+    code: map['code'] ?? '',
+    orderStatus: map['orderStatus'] != null
+        ? List<OrderStatusModel>.from(
+            (map['orderStatus'] as List).map((e) => OrderStatusModel.fromMap(e)))
+        : [],
+  );
+}
 
 }
 
