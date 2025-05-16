@@ -59,9 +59,9 @@ class Header extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: user.image.isEmpty
-                    ? const AssetImage(AppImages.profile)
+                    ? const AssetImage(AppImages.icon)
                     : NetworkImage(user.image)),
-            color: Colors.red,
+           color: AppColors.primary,
             shape: BoxShape.circle),
       ),
     );
@@ -72,13 +72,14 @@ class Header extends StatelessWidget {
       height: 40,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-          color: AppColors.secondBackground,
+          //color: AppColors.secondBackground,
           borderRadius: BorderRadius.circular(100)),
       child: Center(
-        child: Text(
-          user.gender == 1 ? 'Men' : 'Women',
-          style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-        ),
+        child: SvgPicture.asset(
+          AppVectors.anly,
+          height: 30,
+          width: 30,
+          ),
       ),
     );
   }

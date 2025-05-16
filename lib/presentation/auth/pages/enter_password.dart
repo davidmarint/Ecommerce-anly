@@ -15,7 +15,7 @@ EnterPassword({super.key, required this.signinReq});
 
 final UserSigninReq signinReq;
 
-final TextEditingController _passwordCon = TextEditingController(text: 'qwer1234');
+final TextEditingController _passwordCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

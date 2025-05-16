@@ -41,7 +41,7 @@ class ProductOrderedModel {
       'productQuantity': productQuantity,
       'productPrice': productPrice,
       'totalPrice': totalPrice,
-      'productImage': productImageUrl,
+      'productImageUrl': productImageUrl,
       'createdDate': createdDate,
       'id': id,
     };

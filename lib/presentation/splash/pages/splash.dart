@@ -1,4 +1,5 @@
 import 'package:ecommerce_anly/core/configs/assets/app_vectors.dart';
+//import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/signin.dart';
 import 'package:ecommerce_anly/presentation/home/pages/home.dart';
@@ -21,11 +22,13 @@ class SplashPage extends StatelessWidget {
           }
         },
       child: Scaffold(
-        //backgroundColor: AppColors.primary,
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color(0xffffffff),
+        // AppColors.background,
         body: Center(
           child: SvgPicture.asset(
-          AppVectors.appLogo
+          AppVectors.appLogo,
+          height: 300,
+          width: 300,
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppButton extends StatelessWidget {
@@ -5,7 +6,7 @@ class BasicAppButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
-    this.color = Colors.brown,
+    this.color = AppColors.primary,
     this.textColor = Colors.white,
     this.borderRadius = 20,
     this.width,

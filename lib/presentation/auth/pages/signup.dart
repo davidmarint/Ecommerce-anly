@@ -1,3 +1,4 @@
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/data/auth/models/user_creation_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/gender_and_age_selection.dart';
@@ -57,7 +58,9 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _firstNameCon,
       decoration: const InputDecoration(
-          hintText: 'First name', border: OutlineInputBorder()),
+          hintText: 'First name',
+          hintStyle: TextStyle(color: AppColors.textColorSecond),
+          border: OutlineInputBorder()),
     );
   }
 
@@ -65,7 +68,9 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _lastNameCon,
       decoration: const InputDecoration(
-          hintText: 'Last name', border: OutlineInputBorder()),
+          hintText: 'Last name',
+          hintStyle: TextStyle(color: AppColors.textColorSecond),
+           border: OutlineInputBorder()),
     );
   }
 
@@ -73,7 +78,9 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _emailCon,
       decoration: const InputDecoration(
-          hintText: 'Email Adress', border: OutlineInputBorder()),
+          hintText: 'Email Adress',
+          hintStyle: TextStyle(color: AppColors.textColorSecond),
+           border: OutlineInputBorder()),
     );
   }
 
@@ -81,7 +88,9 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _passwordCon,
       decoration: const InputDecoration(
-          hintText: 'Password', border: OutlineInputBorder()),
+          hintText: 'Password',
+          hintStyle: TextStyle(color: AppColors.textColorSecond),
+           border: OutlineInputBorder()),
     );
   }
 
@@ -105,7 +114,7 @@ class SignUpPage extends StatelessWidget {
     return RichText(
       text: TextSpan(
           text: 'Do you have an account? ',
-          style: const TextStyle(color: Colors.black, fontSize: 14),
+          style: const TextStyle(color: AppColors.textColor, fontSize: 14),
           children: [
             TextSpan(
                 text: 'Sing In',
