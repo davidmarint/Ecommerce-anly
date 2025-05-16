@@ -12,6 +12,7 @@ import 'package:ecommerce_anly/domain/auth/useCase/get_ages.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/get_user.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/is_logged_in.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/send_password_reset_email.dart';
+import 'package:ecommerce_anly/domain/auth/useCase/signOut.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signin.dart';
 import 'package:ecommerce_anly/domain/auth/useCase/signup.dart';
 import 'package:ecommerce_anly/domain/category/repository/category.dart';
@@ -19,6 +20,7 @@ import 'package:ecommerce_anly/domain/category/usecases/get_categories.dart';
 import 'package:ecommerce_anly/domain/order/repository/order.dart';
 import 'package:ecommerce_anly/domain/order/usecases/add_to_card.dart';
 import 'package:ecommerce_anly/domain/order/usecases/get_cart_products.dart';
+import 'package:ecommerce_anly/domain/order/usecases/get_orders.dart';
 import 'package:ecommerce_anly/domain/order/usecases/order_registration.dart';
 import 'package:ecommerce_anly/domain/order/usecases/remove_cart_products.dart';
 import 'package:ecommerce_anly/domain/product/repository/product.dart';
@@ -83,6 +85,10 @@ sl.registerSingleton<GetAgesUseCase>(
     SigninUseCase()
  );
 
+  sl.registerSingleton<SignoutUseCase>(
+      SignoutUseCase()
+  );
+
  sl.registerSingleton<SendPasswordUseCase>(
     SendPasswordUseCase()
  );
@@ -139,5 +145,8 @@ sl.registerSingleton<AddToCardUseCase>(
   );
   sl.registerSingleton<GetFavortiesProductsUseCase>(
       GetFavortiesProductsUseCase()
+  );
+  sl.registerSingleton<GetOrdersUseCase>(
+      GetOrdersUseCase()
   );
 }

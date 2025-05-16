@@ -11,6 +11,7 @@ abstract class AuthFirebaseService {
   Future<Either> sendPasswordResetEmail(String email);
   Future<bool> isLoggedIn();
   Future<Either> getUser();
+  Future<Either> signOut();
 }
 
 class AuthFirebaseServiceImpl implements AuthFirebaseService {
@@ -56,7 +57,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   @override
   Future<Either> signIn(UserSigninReq user) async {
     try {
-      // await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+      //await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
        await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: user.email!, password: user.password!);
 
@@ -66,7 +67,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
       print("Usuario autenticado correctamente: ${currentUser.uid}");
       return const Right('Sign In was Successful');
     } else {
-      return Left('Error: La sesión no se mantuvo correctamente.');
+      return const Left('Error: La sesión no se mantuvo correctamente.');
     }
     } on FirebaseAuthException catch (e) {
       String message = '';
@@ -92,12 +93,21 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   
   @override
   Future<bool> isLoggedIn() async {
-    await Future.delayed(const Duration(seconds: 1));
-    if(FirebaseAuth.instance.currentUser != null){
+    User? currentUser = FirebaseAuth.instance.currentUser;
+  
+  // Verificación adicional para asegurar que el token no haya expirado
+  if (currentUser != null) {
+    try {
+      // Intenta renovar el token para confirmar que sigue siendo válido
+      await currentUser.getIdToken(true);
       return true;
-  } else {
-    return false;
+    } catch (e) {
+      print("Error verificando token: $e");
+      return false;
+    }
   }
+  
+  return false;
   }
   
   @override
@@ -111,4 +121,16 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
     return const Left('Please try again later');
   }
   }
+  
+  @override
+  Future<Either> signOut() async {
+   try {
+    await FirebaseAuth.instance.signOut();
+    return const Right('Sign Out was Successful');
+  } catch (e) {
+    return Left('Error signing out: ${e.toString()}');
+  }
+  }
+
+
 }
