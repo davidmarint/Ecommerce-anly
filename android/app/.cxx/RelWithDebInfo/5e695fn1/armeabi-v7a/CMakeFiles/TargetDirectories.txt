@@ -1,0 +1,2 @@
+C:/Users/usuario/Documents/ecommerce_anly/android/app/.cxx/RelWithDebInfo/5e695fn1/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/usuario/Documents/ecommerce_anly/android/app/.cxx/RelWithDebInfo/5e695fn1/armeabi-v7a/CMakeFiles/rebuild_cache.dir

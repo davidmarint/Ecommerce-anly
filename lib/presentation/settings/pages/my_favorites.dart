@@ -39,20 +39,18 @@ class MyFavoritesPage  extends StatelessWidget {
   }
 
    Widget _products(List<ProductEntity> products) {
-    return Expanded(
-      child: GridView.builder(
-        itemCount: products.length,
-        padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 0.6
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            return ProductCard(productEntity: products[index]);
-          },
-      ),
+    return GridView.builder(
+      itemCount: products.length,
+      padding: const EdgeInsets.all(16),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.6
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return ProductCard(productEntity: products[index]);
+        },
     );
   }
 } 
