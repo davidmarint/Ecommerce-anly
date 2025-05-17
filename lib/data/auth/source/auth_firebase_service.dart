@@ -31,14 +31,14 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
         'gener': user.gender,
         'age': user.age
       });
-      return const Right('Sing Up was Successfull');
+      return const Right('Registrarse fue exitoso');
     } on FirebaseAuthException catch (e) {
       String message = '';
 
       if (e.code == 'weak-password') {
-        message = 'The password provided is too weak.';
+        message = 'La contraseña proporcionada es demasiado débil.';
       } else if (e.code == 'email-already-in-use') {
-        message = 'The account already exists for that email.';
+        message = 'La cuenta ya existe para ese correo electrónico.';
       }
       return Left(message);
     }
@@ -50,22 +50,20 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
          var returnedData = await FirebaseFirestore.instance.collection('Ages').get();
           return Right(returnedData.docs);
    } catch(e){
-     return const Left('Please try again later');
+     return const Left('Por favor, inténtelo de nuevo más tarde');
    }
   }
   
   @override
   Future<Either> signIn(UserSigninReq user) async {
     try {
-      //await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
        await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: user.email!, password: user.password!);
 
       
      User? currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null) {
-      print("Usuario autenticado correctamente: ${currentUser.uid}");
-      return const Right('Sign In was Successful');
+      return const Right('Iniciar sesión fue exitoso');
     } else {
       return const Left('Error: La sesión no se mantuvo correctamente.');
     }
@@ -73,9 +71,9 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
       String message = '';
 
       if (e.code == 'invalid-email') {
-        message = 'Not user found for that email.';
+        message = 'No se encontró usuario para ese correo electrónico.';
       } else if (e.code == 'invalid-credentials') {
-        message = 'Wrong password provided for that user.'; 
+        message = 'Contraseña incorrecta.'; 
       }
       return Left(message);
     }
@@ -85,9 +83,9 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   Future<Either> sendPasswordResetEmail(String email) async {
     try{
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-      return const Right('Password reset email sent');
+      return const Right('Correo electrónico de restablecimiento de contraseña enviado');
     }catch(e){
-      return const Left('Please try again later');
+      return const Left('Por favor, inténtelo de nuevo');
     }
   }
   
@@ -95,14 +93,11 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   Future<bool> isLoggedIn() async {
     User? currentUser = FirebaseAuth.instance.currentUser;
   
-  // Verificación adicional para asegurar que el token no haya expirado
   if (currentUser != null) {
     try {
-      // Intenta renovar el token para confirmar que sigue siendo válido
       await currentUser.getIdToken(true);
       return true;
     } catch (e) {
-      print("Error verificando token: $e");
       return false;
     }
   }
@@ -126,9 +121,9 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
   Future<Either> signOut() async {
    try {
     await FirebaseAuth.instance.signOut();
-    return const Right('Sign Out was Successful');
+    return const Right('El cierre de sesión fue exitoso');
   } catch (e) {
-    return Left('Error signing out: ${e.toString()}');
+    return Left('Error al cerrar sesión: ${e.toString()}');
   }
   }
 

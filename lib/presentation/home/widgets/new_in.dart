@@ -20,7 +20,7 @@ class NewIn extends StatelessWidget {
       child: BlocBuilder < ProductsDisplayCubit, ProductsDisplayState > (
         builder: (context, state) {
           if (state is ProductsLoading) {
-            return const CircularProgressIndicator();
+            return const CircularProgressIndicator(color: AppColors.secondary,);
           }
           if (state is ProductsLoaded) {
             return Column(
@@ -45,7 +45,7 @@ class NewIn extends StatelessWidget {
          horizontal: 16,
        ),
       child: Text(
-        'New In',
+        'Lo nuevo',
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16,

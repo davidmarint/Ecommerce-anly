@@ -14,7 +14,7 @@ class OrderItemsPage extends StatelessWidget {
     return Scaffold(
       appBar: const BasicAppbar(
         title: Text(
-          'Order Items'
+          'Artículos del pedido'
         ),
       ),
       body: _products()

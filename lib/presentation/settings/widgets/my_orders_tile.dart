@@ -23,7 +23,7 @@ class MyOrdersTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'My Orders',
+              'Mis pedidos',
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 16

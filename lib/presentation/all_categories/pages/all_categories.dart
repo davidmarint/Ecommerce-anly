@@ -35,7 +35,7 @@ class AllCategoriesPage extends StatelessWidget {
 
   Widget _shopByCategories() {
     return const Text(
-      'Shop by Categories',
+      'Comprar por categorías',
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 22

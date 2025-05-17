@@ -28,7 +28,7 @@ class Header extends StatelessWidget {
           builder: (context, state) {
              if (state is UserInfoLoading) {
                return const Center(
-                 child: CircularProgressIndicator(),
+                 child: CircularProgressIndicator(color: AppColors.secondary,),
                );
              }
             if (state is UserInfoLoaded) {

@@ -18,7 +18,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppbar(
-        title: Text('Settings'),
+        title: Text('Configuración'),
       ),
       body:
       BlocProvider(create: (context) => ButtonStateGenericCubit(),
@@ -61,7 +61,7 @@ class SettingsPage extends StatelessWidget {
                   .read<ButtonStateGenericCubit>()
                   .execute(usecase: SignoutUseCase());
             },
-            title: 'Sign Out',
+            title: 'Cerrar Sesión',
           );
         }),
       ),

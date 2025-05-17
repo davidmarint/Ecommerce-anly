@@ -25,7 +25,7 @@ class CheckOutPage extends StatelessWidget {
     return Scaffold(
       appBar: const BasicAppbar(
         title: Text(
-          'Checkout'
+          'Verificación'
         ),
       ),
       body: BlocProvider(
@@ -63,7 +63,7 @@ class CheckOutPage extends StatelessWidget {
                                   ),
                                 ),
                                 const Text(
-                                  'Place Order',
+                                  'Realizar pedido',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400,
@@ -102,7 +102,7 @@ class CheckOutPage extends StatelessWidget {
       minLines: 2,
       maxLines: 4,
       decoration: const InputDecoration(
-        hintText: 'Shipping Address'
+        hintText: 'Dirección de envío'
       ),
     );
   }

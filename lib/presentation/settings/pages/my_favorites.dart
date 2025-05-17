@@ -16,7 +16,7 @@ class MyFavoritesPage  extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppbar(
-        title: Text('My Favorites'),
+        title: Text('Mis favoritos'),
 
       ),
       body: BlocProvider(

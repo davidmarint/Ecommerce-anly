@@ -46,7 +46,7 @@ class Checkout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Shipping Cost',
+                'Costo de envío',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16
@@ -65,7 +65,7 @@ class Checkout extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Tax',
+                'Impuesto',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16
@@ -103,7 +103,7 @@ class Checkout extends StatelessWidget {
             onPressed: (){
               AppNavigator().push(context, CheckOutPage(products: products,));
             },
-            text: 'Checkout',
+            text: 'Verificar pedido',
           )
         ],
       ),

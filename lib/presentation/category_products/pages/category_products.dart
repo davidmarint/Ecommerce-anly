@@ -32,7 +32,7 @@ class CategoryProductsPage extends StatelessWidget {
             if (state is ProductsLoaded ){
               return 
               (state.products.isEmpty) ? const Center(
-                child: Text('No Products Found')):
+                child: Text('No se encontraron productos')):
                Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(

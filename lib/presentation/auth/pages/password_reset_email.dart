@@ -32,10 +32,19 @@ class PasswordResetEmailPage extends StatelessWidget {
   }
 
   Widget _sentEmail() {
-    return const Center(
-      child: Text(
-        'We Sent you an Email to reset your password.'
-      ),
+    return const Column(
+      children: [
+        Center(
+          child: Text(
+            'Te enviamos un correo electrónico para '
+          ),
+        ),
+        Center(
+          child: Text(
+            'restablecer tu contraseña.'
+          ),
+        ),
+      ],
     );
   }
 
@@ -44,8 +53,8 @@ class PasswordResetEmailPage extends StatelessWidget {
       onPressed: (){
         AppNavigator.pushReplacement(context, SignInPage());
       },
-      width: 200,
-      text: 'Return to Login'
+      width: 250,
+      text: 'Regresar a iniciar de sesión'
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:ecommerce_anly/bloc/button/button_state.dart';
 import 'package:ecommerce_anly/bloc/button/button_state_signin_cubit.dart';
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/data/auth/models/user_signin_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/forgot_password.dart';
@@ -57,7 +58,7 @@ final TextEditingController _passwordCon = TextEditingController();
 
   Widget _singinText(BuildContext context){
     return const Text(
-      'Sign In', 
+      'Iniciar Sesión', 
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -68,8 +69,11 @@ final TextEditingController _passwordCon = TextEditingController();
     return  TextField(
       controller: _passwordCon ,
       decoration: const InputDecoration(
-        hintText: 'Enter your password',
-        border: OutlineInputBorder()
+        hintText: 'Ingresa tu contraseña',
+        border: OutlineInputBorder(),
+        focusedBorder: OutlineInputBorder( 
+          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+        ),
       ),
     );
    }
@@ -78,7 +82,7 @@ final TextEditingController _passwordCon = TextEditingController();
       return Builder(
         builder: (context) {
           return BasicSigninButton(
-            title: 'Continue', 
+            title: 'Continuar', 
             onPressed: (){
               signinReq.password = _passwordCon.text;
               context.read<ButtonStateSigninCubit>().execute(
@@ -92,13 +96,13 @@ final TextEditingController _passwordCon = TextEditingController();
     Widget _forgotPassword(BuildContext context){
       return RichText(
         text:  TextSpan(
-          text: 'Forgot password? ',
+          text: '¿Has olvidado tu contraseña? ',
           style: const TextStyle(
             fontSize: 14
           ),
           children: [
             TextSpan(
-              text: 'Reset',
+              text: 'Restablecer',
               recognizer: TapGestureRecognizer()..onTap = (){
                 AppNavigator().push(context, ForgotPasswordPage());
               },

@@ -31,7 +31,7 @@ class SearchField extends StatelessWidget {
             AppVectors.search,
             fit: BoxFit.none,
           ),
-          hintText: 'search'
+          hintText: 'Buscar',
         ),
       ),
     );

@@ -46,7 +46,7 @@ class SignUpPage extends StatelessWidget {
 
   Widget _singinText(BuildContext context) {
     return const Text(
-      'Create Account',
+      'Crear una cuenta',
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -58,9 +58,12 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _firstNameCon,
       decoration: const InputDecoration(
-          hintText: 'First name',
+          hintText: 'Primer nombre',
           hintStyle: TextStyle(color: AppColors.textColorSecond),
-          border: OutlineInputBorder()),
+          border: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder( 
+          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+        ),),
     );
   }
 
@@ -68,9 +71,12 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _lastNameCon,
       decoration: const InputDecoration(
-          hintText: 'Last name',
+          hintText: 'Segundo nombre',
           hintStyle: TextStyle(color: AppColors.textColorSecond),
-           border: OutlineInputBorder()),
+           border: OutlineInputBorder(),
+           focusedBorder: OutlineInputBorder( 
+          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+        ),),
     );
   }
 
@@ -78,9 +84,12 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _emailCon,
       decoration: const InputDecoration(
-          hintText: 'Email Adress',
+          hintText: 'Correo electrónico',
           hintStyle: TextStyle(color: AppColors.textColorSecond),
-           border: OutlineInputBorder()),
+           border: OutlineInputBorder(),
+           focusedBorder: OutlineInputBorder( 
+          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+        ),),
     );
   }
 
@@ -88,15 +97,18 @@ class SignUpPage extends StatelessWidget {
     return TextField(
       controller: _passwordCon,
       decoration: const InputDecoration(
-          hintText: 'Password',
+          hintText: 'Contraseña',
           hintStyle: TextStyle(color: AppColors.textColorSecond),
-           border: OutlineInputBorder()),
+           border: OutlineInputBorder(),
+           focusedBorder: OutlineInputBorder( 
+          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+        ),),
     );
   }
 
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
-        text: 'Continue',
+        text: 'Continuar',
         onPressed: () {
           AppNavigator().push(
               context,
@@ -113,11 +125,11 @@ class SignUpPage extends StatelessWidget {
   Widget _createAccount(BuildContext context) {
     return RichText(
       text: TextSpan(
-          text: 'Do you have an account? ',
+          text: '¿Tienes una cuenta? ',
           style: const TextStyle(color: AppColors.textColor, fontSize: 14),
           children: [
             TextSpan(
-                text: 'Sing In',
+                text: 'Iniciar sesión',
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
                     AppNavigator.pushReplacement(context, SignInPage());

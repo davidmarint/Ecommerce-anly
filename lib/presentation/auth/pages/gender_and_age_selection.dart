@@ -70,7 +70,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget _tellUs() {
     return const Text(
-      'Tell us about yourself',
+      'Cuéntanos sobre ti',
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w500
@@ -84,9 +84,9 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
         return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          genderTile(context,1,'Men'),
+          genderTile(context,1,'Hombre'),
           const SizedBox(width: 20,),
-          genderTile(context,2,'Women'),
+          genderTile(context,2,'Mujer'),
         ],
       );
       }
@@ -124,7 +124,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
 
   Widget howOld() {
     return const Text(
-      'How old are you?',
+      '¿Cuántos años tienes?',
       style: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w500
@@ -188,7 +188,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
                     params: userCreationReq
                   );
               },
-              text: 'Finish'
+              text: 'Registrarse',
             );
           }
         ),
