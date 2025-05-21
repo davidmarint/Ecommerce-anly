@@ -19,12 +19,21 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 ## 📸 Capturas de pantalla
 
+
+| 🏠 Pantalla principal | 🔐 Inicio de sesión |
+|-----------------------|---------------------|
+| ![Home](images/sesion.jpg) | ![Login](images/contraseña.png) |
+
+| 🛒 Lista de productos | 📦 Detalle de producto |
+|----------------------|------------------------|
+| ![Products](images/registro.png) | ![Product Detail](images/genero.jpg) |
+
 | [**Inicio de sesión**](https://github.com/davidmarint/Ecommerce-anly/tree/readme/lib/presentation/auth/pages) | 
 |------------|-------------| 
 |  <img src="images/sesion.jpg" width="250"> |  <img src="images/contraseña.png" width="250"> |
 | [**Registro de usuarios**]   | 
 |------------|-------------| 
-|  <img src="images/registro.png" width="250"> |  <img src="images/genero.jpg"> |  
+|  <img src="images/registro.png" width="250"> |  <img src="images/genero.jpg" width="250"> |  
 
 | [**Visualizacion de productos**]   | 
 |------------|-------------| 
@@ -39,8 +48,8 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 | <img src="images/carro.jpg" width="250"> | <center> <img src="images/realizado.jpg" width="250"> </center>|
 
 |[**Seguimiento del pedido**] |
-|--|--|
-| <center> <img src="images/seguimiento.png" width="250"> </center> | <center> <img src="images/pedido.jpg" width="250"> </center>|
+
+| <img src="images/seguimiento.png" width="250"> |  <img src="images/pedido.jpg" width="250">|
 
 ---
 
