@@ -11,7 +11,6 @@ class ButtonStateCubit extends Cubit<ButtonState>{
     emit(ButtonLoadingState());
     try{
     Either returnedData = await SignupUseCase().call(params: params);
-    
     returnedData.fold(
       (message) => emit(
         ButtonFailureState(errorMessage: message)
