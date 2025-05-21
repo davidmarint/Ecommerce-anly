@@ -22,7 +22,7 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 | Inicio de sesión | Verificación |
 |-----------------------|---------------------|
-| <img src="images/sesion.png" width="250">  | <img src="images/contraseña.png" width="250"> |
+| <img src="images/sesion.png" width="400">  | <img src="images/contraseña.png" width="400"> |
 
 | Registro de usuarios | Datos adicionales  |
 |----------------------|------------------------|
