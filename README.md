@@ -26,7 +26,7 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 | Registro de usuarios | Datos adicionales  |
 |----------------------|------------------------|
-| <img src="images/registro.png" width="250"> | <img src="images/genero.png" width="250">  |
+| <img src="images/registro.png" width="400"> | <img src="images/genero.png" width="400">  |
 
 | Visualizacion de productos | Detalles del producto  |
 |----------------------|------------------------|
@@ -42,7 +42,7 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 | Lista de pedidos | Seguimiento del pedido  |
 |----------------------|------------------------|
-|<img src="images/seguimiento.png" width="250">   | <img src="images/pedido.png" width="250"> |
+|<img src="images/seguimiento.png" width="400">   | <img src="images/pedido.png" width="400"> |
 
 
 ---
