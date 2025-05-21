@@ -1,3 +1,4 @@
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppButton extends StatelessWidget {
@@ -5,11 +6,11 @@ class BasicAppButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
-    this.color = Colors.brown,
+    this.color = AppColors.primary,
     this.textColor = Colors.white,
-    this.borderRadius = 20,
+    this.borderRadius = 25,
     this.width,
-    this.height = 40,
+    this.height,
     this.padding = EdgeInsetsDirectional.zero,
   }) : super(key: key);
 
@@ -29,7 +30,7 @@ class BasicAppButton extends StatelessWidget {
       child: Container(
         padding: padding,
         width: width ?? double.infinity,
-        height: height,
+        height: height ?? 50,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
             color: color,

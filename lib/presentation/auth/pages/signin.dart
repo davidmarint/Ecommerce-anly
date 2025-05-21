@@ -1,3 +1,5 @@
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
+import 'package:ecommerce_anly/data/auth/models/user_signin_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/enter_password.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/signup.dart';
@@ -7,12 +9,16 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
+  SignInPage({super.key});
+   
+  final TextEditingController _emailCon = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: const BasicAppbar(hideBack: true,),
       body: Padding(
-        padding:  EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 40, 
           horizontal: 16),
         child: Column(
@@ -33,7 +39,7 @@ class SignInPage extends StatelessWidget {
 
   Widget _singinText(BuildContext context){
     return const Text(
-      'Sign In', 
+      'Iniciar Sesión', 
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -41,35 +47,40 @@ class SignInPage extends StatelessWidget {
   }
 
    Widget _emailField(BuildContext context){
-    return const TextField(
-      
-      decoration: InputDecoration(
-        // labelText: 'Email',
-        hintText: 'Enter your email',
-        border: OutlineInputBorder()
-      ),
+    return TextField(
+      controller: _emailCon,
+      decoration: const InputDecoration(
+        hintText: 'Ingresa tu correo',
+        border: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder( // Borde cuando se selecciona
+      borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+      ),)
     );
    }
 
     Widget _continueButton(BuildContext context){
       return BasicAppButton(
-        text: 'Continue', 
+        text: 'Continuar', 
         onPressed: (){
-          AppNavigator().push(context, EnterPassword());
+          AppNavigator().push(context,
+          EnterPassword(
+            signinReq: UserSigninReq(
+              email: _emailCon.text,
+            )
+          ));
         });
     }
 
     Widget _createAccount(BuildContext context){
       return RichText(
         text:  TextSpan(
-          text: 'Don\'t have an account? ',
+          text: '¿No tienes una cuenta? ',
           style: const TextStyle(
-            color: Colors.black,
             fontSize: 14
           ),
           children: [
             TextSpan(
-              text: 'Create One',
+              text: 'Crear cuenta',
               recognizer: TapGestureRecognizer()..onTap = (){
                 AppNavigator().push(context, SignUpPage());
               },

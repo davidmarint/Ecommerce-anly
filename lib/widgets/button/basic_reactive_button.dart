@@ -1,5 +1,6 @@
 import 'package:ecommerce_anly/bloc/button/button_state.dart';
 import 'package:ecommerce_anly/bloc/button/button_state_cubit.dart';
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +9,7 @@ class BasicReactiveButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onPressed,
-    this.color = Colors.brown,
+    this.color = AppColors.primary,
     this.textColor = Colors.white,
     this.borderRadius = 20,
     this.width,
