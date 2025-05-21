@@ -5,6 +5,7 @@ import 'package:ecommerce_anly/presentation/auth/pages/gender_and_age_selection.
 import 'package:ecommerce_anly/presentation/auth/pages/signin.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_app_button.dart';
+import 'package:ecommerce_anly/widgets/textField/text_field_password.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -94,16 +95,7 @@ class SignUpPage extends StatelessWidget {
   }
 
   Widget _passwordField(BuildContext context) {
-    return TextField(
-      controller: _passwordCon,
-      decoration: const InputDecoration(
-          hintText: 'Contraseña',
-          hintStyle: TextStyle(color: AppColors.textColorSecond),
-           border: OutlineInputBorder(),
-           focusedBorder: OutlineInputBorder( 
-          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
-        ),),
-    );
+    return PasswordTextField(controller: _passwordCon);
   }
 
   Widget _continueButton(BuildContext context) {

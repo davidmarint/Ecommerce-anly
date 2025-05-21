@@ -7,6 +7,7 @@ import 'package:ecommerce_anly/presentation/auth/pages/forgot_password.dart';
 import 'package:ecommerce_anly/presentation/home/pages/home.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_signin_button.dart';
+import 'package:ecommerce_anly/widgets/textField/text_field_password.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -66,16 +67,7 @@ final TextEditingController _passwordCon = TextEditingController();
   }
 
    Widget _passwordField(BuildContext context){
-    return  TextField(
-      controller: _passwordCon ,
-      decoration: const InputDecoration(
-        hintText: 'Ingresa tu contraseña',
-        border: OutlineInputBorder(),
-        focusedBorder: OutlineInputBorder( 
-          borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
-        ),
-      ),
-    );
+    return  PasswordTextField(controller: _passwordCon,);
    }
 
     Widget _continueButton(BuildContext context){
