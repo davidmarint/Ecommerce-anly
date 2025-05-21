@@ -19,10 +19,28 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 ## 📸 Capturas de pantalla
 
- | [**Inicio de sesión**]   | 
+| [**Inicio de sesión**](https://github.com/davidmarint/Ecommerce-anly/tree/readme/lib/presentation/auth/pages) | 
 |------------|-------------| 
 |  <img src="images/sesion.jpg" width="250"> |  <img src="images/contraseña.png" width="250"> |
+| [**Registro de usuarios**]   | 
+|------------|-------------| 
+|  <img src="images/registro.png" width="250"> |  <img src="images/genero.jpg"> |  
 
+| [**Visualizacion de productos**]   | 
+|------------|-------------| 
+|  <img src="images/inicio.jpg" width="250"> |  <img src="images/detalle.jpg" width="250"> |
+
+ | [**Busqueda de productos**]  |  
+ |------------|-------------| 
+ | <img src="images/buscador.jpg" width="250"> |  <img src="images/categorias.jpg" width="250"> |
+
+| [**Carrito de compras**] |
+|--|--|
+| <img src="images/carro.jpg" width="250"> | <center> <img src="images/realizado.jpg" width="250"> </center>|
+
+|[**Seguimiento del pedido**] |
+|--|--|
+| <center> <img src="images/seguimiento.png" width="250"> </center> | <center> <img src="images/pedido.jpg" width="250"> </center>|
 
 ---
 
@@ -81,6 +99,6 @@ Conecta un emulador o dispositivo físico y ejecuta:
 
 - Carrito de compras
 
-- Pasarela de pago (pendiente)
+-  Pasarela de pago (pendiente)
 
 ---
