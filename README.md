@@ -20,13 +20,13 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 ## 📸 Capturas de pantalla
 
 
-| 🏠 Pantalla principal | 🔐 Inicio de sesión |
+| 🏠 Pantalla principal |
 |-----------------------|---------------------|
-| ![Home](images/sesion.jpg) | ![Login](images/contraseña.png) |
+| ![Home](images/sesion.png) | ![Login](images/contraseña.png) |
 
 | 🛒 Lista de productos | 📦 Detalle de producto |
 |----------------------|------------------------|
-| ![Products](images/registro.png) | ![Product Detail](images/genero.jpg) |
+| ![Products](images/registro.png) | ![Product Detail](images/genero.png) |
 
 | [**Inicio de sesión**](https://github.com/davidmarint/Ecommerce-anly/tree/readme/lib/presentation/auth/pages) | 
 |------------|-------------| 
