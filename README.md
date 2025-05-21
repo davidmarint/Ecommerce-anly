@@ -20,36 +20,30 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 ## 📸 Capturas de pantalla
 
 
-| 🏠 Pantalla principal |
+| Inicio de sesión | Verificación |
 |-----------------------|---------------------|
 | ![Home](images/sesion.png) | ![Login](images/contraseña.png) |
 
-| 🛒 Lista de productos | 📦 Detalle de producto |
+| Registro de usuarios | Datos adicionales  |
 |----------------------|------------------------|
 | ![Products](images/registro.png) | ![Product Detail](images/genero.png) |
 
-| [**Inicio de sesión**](https://github.com/davidmarint/Ecommerce-anly/tree/readme/lib/presentation/auth/pages) | 
-|------------|-------------| 
-|  <img src="images/sesion.jpg" width="250"> |  <img src="images/contraseña.png" width="250"> |
-| [**Registro de usuarios**]   | 
-|------------|-------------| 
-|  <img src="images/registro.png" width="250"> |  <img src="images/genero.jpg" width="250"> |  
+| Visualizacion de productos | Detalles del producto  |
+|----------------------|------------------------|
+| ![Products](images/inicio.png) | ![Product Detail](images/detalle.png) |
 
-| [**Visualizacion de productos**]   | 
-|------------|-------------| 
-|  <img src="images/inicio.jpg" width="250"> |  <img src="images/detalle.jpg" width="250"> |
+| Buqueda de productos | Busqueda por categorias  |
+|----------------------|------------------------|
+| ![Products](images/buscador.png) | ![Product Detail](images/categorias.png) |
 
- | [**Busqueda de productos**]  |  
- |------------|-------------| 
- | <img src="images/buscador.jpg" width="250"> |  <img src="images/categorias.jpg" width="250"> |
+| Carrito de compras | Creacion de pedidos  |
+|----------------------|------------------------|
+| ![Products](images/carro.png) | ![Product Detail](images/realizados.png) |
 
-| [**Carrito de compras**] |
-|--|--|
-| <img src="images/carro.jpg" width="250"> | <center> <img src="images/realizado.jpg" width="250"> </center>|
+| Lista de pedidos | Seguimiento del pedido  |
+|----------------------|------------------------|
+| ![Products](images/seguimiento.png) | ![Product Detail](images/pedido.png) |
 
-|[**Seguimiento del pedido**] |
-
-| <img src="images/seguimiento.png" width="250"> |  <img src="images/pedido.jpg" width="250">|
 
 ---
 
