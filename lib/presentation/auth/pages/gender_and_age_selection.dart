@@ -3,9 +3,11 @@ import 'package:ecommerce_anly/bloc/button/button_state_cubit.dart';
 import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/data/auth/models/user_creation_req.dart';
 import 'package:ecommerce_anly/helpers/bottomsheet/app_bottomsheet.dart';
+import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/blog/age_selection_cubit.dart';
 import 'package:ecommerce_anly/presentation/auth/blog/ages_display_cubit.dart';
 import 'package:ecommerce_anly/presentation/auth/blog/gender_selection_cubit.dart';
+import 'package:ecommerce_anly/presentation/auth/pages/signin.dart';
 import 'package:ecommerce_anly/presentation/auth/widgets/ages.dart';
 import 'package:ecommerce_anly/widgets/appbar/app_bar.dart';
 import 'package:ecommerce_anly/widgets/button/basic_reactive_button.dart';
@@ -37,6 +39,11 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
               if (state is ButtonFailureState){
                 var snackbar = SnackBar(content: Text(state.errorMessage),behavior: SnackBarBehavior.floating,);
                 ScaffoldMessenger.of(context).showSnackBar(snackbar);
+              }
+                if (state is ButtonSuccessState){
+                  var snackbar = SnackBar(content: Text(state.message!),behavior: SnackBarBehavior.floating,);
+                ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                AppNavigator.pushAndRemove(context, SignInPage());
               }
             },
             child: Column(

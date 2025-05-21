@@ -31,7 +31,7 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
         'gener': user.gender,
         'age': user.age
       });
-      return const Right('Registrarse fue exitoso');
+      return const Right('El Registro fue exitoso');
     } on FirebaseAuthException catch (e) {
       String message = '';
 
@@ -39,6 +39,8 @@ class AuthFirebaseServiceImpl implements AuthFirebaseService {
         message = 'La contraseña proporcionada es demasiado débil.';
       } else if (e.code == 'email-already-in-use') {
         message = 'La cuenta ya existe para ese correo electrónico.';
+      } else  if (e.code == 'invalid-email') {
+        message = 'El correo electrónico no tiene un formato válido.';
       }
       return Left(message);
     }
