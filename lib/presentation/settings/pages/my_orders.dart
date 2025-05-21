@@ -16,7 +16,7 @@ class MyOrdersPage extends StatelessWidget {
     return Scaffold(
       appBar: const BasicAppbar(
           title: Text(
-            'My Orders'
+            'Mis pedidos',
           ),
         ),
         body: BlocProvider(
@@ -77,14 +77,14 @@ class MyOrdersPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Order #${orders[index].code}',
+                              'Pedido #${orders[index].code}',
                               style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16
                               ),
                             ),
                             Text(
-                              '${orders[index].products.length} item',
+                              '${orders[index].products.length} artículo(s)',
                               style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,

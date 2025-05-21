@@ -17,7 +17,7 @@ class ButtonStateCubit extends Cubit<ButtonState>{
         ButtonFailureState(errorMessage: message)
       ),
       (data) => emit(
-        ButtonSuccessState()
+        ButtonSuccessState(message: data)
       )
     );
     }catch(e){

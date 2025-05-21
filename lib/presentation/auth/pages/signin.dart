@@ -1,3 +1,4 @@
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/data/auth/models/user_signin_req.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/auth/pages/enter_password.dart';
@@ -38,7 +39,7 @@ class SignInPage extends StatelessWidget {
 
   Widget _singinText(BuildContext context){
     return const Text(
-      'Sign In', 
+      'Iniciar Sesión', 
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -49,15 +50,17 @@ class SignInPage extends StatelessWidget {
     return TextField(
       controller: _emailCon,
       decoration: const InputDecoration(
-        hintText: 'Enter your email',
-        border: OutlineInputBorder()
-      ),
+        hintText: 'Ingresa tu correo',
+        border: OutlineInputBorder(),
+          focusedBorder: OutlineInputBorder( // Borde cuando se selecciona
+      borderSide: BorderSide(color: AppColors.secondary, width: 2.0),
+      ),)
     );
    }
 
     Widget _continueButton(BuildContext context){
       return BasicAppButton(
-        text: 'Continue', 
+        text: 'Continuar', 
         onPressed: (){
           AppNavigator().push(context,
           EnterPassword(
@@ -71,13 +74,13 @@ class SignInPage extends StatelessWidget {
     Widget _createAccount(BuildContext context){
       return RichText(
         text:  TextSpan(
-          text: 'Don\'t have an account? ',
+          text: '¿No tienes una cuenta? ',
           style: const TextStyle(
             fontSize: 14
           ),
           children: [
             TextSpan(
-              text: 'Create One',
+              text: 'Crear cuenta',
               recognizer: TapGestureRecognizer()..onTap = (){
                 AppNavigator().push(context, SignUpPage());
               },

@@ -39,7 +39,7 @@ class OrderPlacedPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Order Placed Successfully',
+                    'Pedido realizado con éxito',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20
@@ -47,7 +47,7 @@ class OrderPlacedPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 30,),
                   BasicAppButton(
-                    text: 'Finish',
+                    text: 'Finalizar',
                     onPressed: (){
                       AppNavigator.pushAndRemove(context, const HomePage());
                     } 

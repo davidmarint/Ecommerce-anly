@@ -1,4 +1,5 @@
 import 'package:ecommerce_anly/core/configs/assets/app_vectors.dart';
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/domain/order/entities/product_ordered.dart';
 import 'package:ecommerce_anly/presentation/cart/bloc/cart_products_display_cubit.dart';
 import 'package:ecommerce_anly/presentation/cart/bloc/cart_products_display_state.dart';
@@ -16,7 +17,7 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const BasicAppbar(
-          title: Text('Cart'),
+          title: Text('Carro de compras'),
         ),
         body: BlocProvider(
           create: (context) =>
@@ -25,7 +26,7 @@ class CartPage extends StatelessWidget {
               BlocBuilder<CartProductsDisplayCubit, CartProductsDisplayState>(
             builder: (context, state) {
               if (state is CartProductsLoading) {
-                return const Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator(color: AppColors.secondary,));
               }
               if (state is CartProductsLoaded) {
                 return state.products.isEmpty
@@ -45,7 +46,7 @@ class CartPage extends StatelessWidget {
                       );
               }
               if (state is LoadCartProductsFailure) {
-                return const Center(child: Text('Error loading cart products'));
+                return const Center(child: Text('Error al cargar los productos del carrito'));
               }
               return Container();
             },
@@ -75,7 +76,7 @@ class CartPage extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.all(16),
           child: Text(
-            'Cart is empty',
+            'El carrito está vacío',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w500,

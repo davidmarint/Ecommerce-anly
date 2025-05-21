@@ -1,0 +1,2 @@
+C:/Users/usuario/Documents/ecommerce_anly/android/app/.cxx/RelWithDebInfo/5e695fn1/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/usuario/Documents/ecommerce_anly/android/app/.cxx/RelWithDebInfo/5e695fn1/x86_64/CMakeFiles/rebuild_cache.dir

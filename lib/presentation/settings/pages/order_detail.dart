@@ -17,7 +17,7 @@ class OrderDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppbar(
         title: Text(
-          'Order #${orderEntity.code}'
+          'Pedido #${orderEntity.code}'
         ),
       ),
       body: SingleChildScrollView(
@@ -92,7 +92,7 @@ class OrderDetailPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-            'Order Items',
+            'Artículos del pedido',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16
@@ -120,7 +120,7 @@ class OrderDetailPage extends StatelessWidget {
                           ),
                           const SizedBox(width: 20, ),
                           Text(
-                            '${orderEntity.products.length} Items',
+                            '${orderEntity.products.length} Artículo(s)',
                             style: const TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 16
@@ -129,11 +129,11 @@ class OrderDetailPage extends StatelessWidget {
                         ],
                       ),
                       const Text(
-                        'View All',
+                        'Ver todo',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
-                          color: AppColors.primary
+                          color: Color.fromARGB(255, 255, 255, 255)
                         ),
                       )
                     ],
@@ -149,7 +149,7 @@ class OrderDetailPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-            'Shipping details',
+            'Detalles de envío',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16

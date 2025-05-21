@@ -1,4 +1,5 @@
 import 'package:ecommerce_anly/bloc/button/button_state_signin_cubit.dart';
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -38,7 +39,7 @@ class BasicSigninButton extends StatelessWidget {
       child: Container(
         height: height ?? 50,
         alignment: Alignment.center,
-        child: const CircularProgressIndicator()
+        child: const CircularProgressIndicator( color: AppColors.secondary,)
       )
     );
   }

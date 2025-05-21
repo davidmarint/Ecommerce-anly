@@ -51,7 +51,7 @@ class ForgotPasswordPage extends StatelessWidget {
 
   Widget _singinText(BuildContext context){
     return const Text(
-      'Fotgot Password', 
+      'Has olvidado tu contraseña', 
       style: TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class ForgotPasswordPage extends StatelessWidget {
     return TextField(
       controller: _emailCon,
       decoration: const InputDecoration(
-        hintText: 'Enter your email',
+        hintText: 'Ingresa tu correo',
         border: OutlineInputBorder()
       ),
     );
@@ -72,7 +72,7 @@ class ForgotPasswordPage extends StatelessWidget {
       return Builder(
         builder: (context) {
           return BasicReactiveGenericButton(
-            title: 'Continue', 
+            title: 'Continuar', 
             onPressed: (){
               context.read<ButtonStateGenericCubit>().execute(
                 usecase: SendPasswordUseCase(),

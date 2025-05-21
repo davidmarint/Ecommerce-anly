@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/domain/product/entities/products.dart';
 import 'package:ecommerce_anly/domain/product/usecases/get_top_selling.dart';
 import 'package:ecommerce_anly/presentation/home/bloc/products_display_cubit.dart';
@@ -18,7 +19,7 @@ class TopSelling extends StatelessWidget {
       child: BlocBuilder < ProductsDisplayCubit, ProductsDisplayState> (
         builder: (context, state) {
           if (state is ProductsLoading) {
-            return const CircularProgressIndicator();
+            return const CircularProgressIndicator(color: AppColors.secondary,);
           }
           if (state is ProductsLoaded) {
             return Column(
@@ -43,7 +44,7 @@ class TopSelling extends StatelessWidget {
          horizontal: 16,
        ),
       child: Text(
-        'Top Selling',
+        'Más vendido',
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16

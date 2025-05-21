@@ -1,8 +1,10 @@
 import 'package:ecommerce_anly/bloc/categories/categories_display_cubit.dart';
 import 'package:ecommerce_anly/bloc/categories/categories_display_state.dart';
+import 'package:ecommerce_anly/core/configs/theme/app_colors.dart';
 import 'package:ecommerce_anly/domain/category/entities/category.dart';
 import 'package:ecommerce_anly/helpers/navigator/app_navigator.dart';
 import 'package:ecommerce_anly/presentation/all_categories/pages/all_categories.dart';
+import 'package:ecommerce_anly/presentation/category_products/pages/category_products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +19,7 @@ class Categories extends StatelessWidget {
         builder: (context, state) {
           if (state is CategoriesLoading) {
             return const Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(color: AppColors.secondary,),
             );
           }
           if (state is CategoriesLoaded) {
@@ -44,7 +46,7 @@ class Categories extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
          const Text(
-            'Categories',
+            'Categorias',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           GestureDetector(
@@ -52,7 +54,7 @@ class Categories extends StatelessWidget {
             AppNavigator().push(context, const AllCategoriesPage());
             },
             child: const Text(
-              'See All',
+              'Ver todas',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             ),
           ),
@@ -70,18 +72,27 @@ class Categories extends StatelessWidget {
           itemBuilder: (contetx, index) {
             return Column(
               children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                       image: DecorationImage(
-                           fit: BoxFit.fill,
-                           image: NetworkImage(
-                                 categories[index].image,
-                           ))
-                          ),
+                GestureDetector(
+                  onDoubleTap: () {
+                    AppNavigator().push(
+                        contetx,
+                        CategoryProductsPage(
+                          categoryEntity: categories[index],
+                        ));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                         image: DecorationImage(
+                             fit: BoxFit.fill,
+                             image: NetworkImage(
+                                   categories[index].image,
+                             ))
+                            ),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

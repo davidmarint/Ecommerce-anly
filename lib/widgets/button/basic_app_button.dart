@@ -8,9 +8,9 @@ class BasicAppButton extends StatelessWidget {
     required this.onPressed,
     this.color = AppColors.primary,
     this.textColor = Colors.white,
-    this.borderRadius = 20,
+    this.borderRadius = 25,
     this.width,
-    this.height = 40,
+    this.height,
     this.padding = EdgeInsetsDirectional.zero,
   }) : super(key: key);
 
@@ -30,7 +30,7 @@ class BasicAppButton extends StatelessWidget {
       child: Container(
         padding: padding,
         width: width ?? double.infinity,
-        height: height,
+        height: height ?? 50,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
             color: color,
