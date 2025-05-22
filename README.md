@@ -22,27 +22,27 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 
 | Inicio de sesión | Verificación |
 |-----------------------|---------------------|
-| <img src="images/sesion.png" width="400">  | <img src="images/contraseña.png" width="400"> |
+| <img src="images/sesion.png" width="250">  | <img src="images/contraseña.png" width="250"> |
 
 | Registro de usuarios | Datos adicionales  |
 |----------------------|------------------------|
-| <img src="images/registro.png" width="400"> | <img src="images/genero.png" width="400">  |
+| <img src="images/registro.png" width="250"> | <img src="images/genero.png" width="250">  |
 
-| Visualizacion de productos | Detalles del producto  |
+| Visualización de productos | Detalles del producto  |
 |----------------------|------------------------|
-| ![Products](images/inicio.png) | ![Product Detail](images/detalle.png) |
+| <img src="images/inicio.png" width="250"> | <img src="images/detalle.png" width="250">  |
 
-| Buqueda de productos | Busqueda por categorias  |
+| Búqueda de productos | Búsqueda por categorías  |
 |----------------------|------------------------|
-| ![Products](images/buscador.png) | ![Product Detail](images/categorias.png) |
+| <img src="images/buscador.png" width="250"> | <img src="images/categorias.png" width="250">  |
 
-| Carrito de compras | Creacion de pedidos  |
+| Carrito de compras | Creación de pedidos  |
 |----------------------|------------------------|
-| ![Products](images/carro.png) | ![Product Detail](images/realizado.png) |
+| <img src="images/carro.png" width="250"> | <img src="images/realizado.png" width="250">  
 
 | Lista de pedidos | Seguimiento del pedido  |
 |----------------------|------------------------|
-|<img src="images/seguimiento.png" width="400">   | <img src="images/pedido.png" width="400"> |
+|<img src="images/seguimiento.png" width="250">   | <img src="images/pedido.png" width="250"> |
 
 
 ---
@@ -62,32 +62,21 @@ Una aplicación móvil de comercio electrónico desarrollada en Flutter, que per
 ## ⚙️ Instalación
 
 1. Clona este repositorio:
-
+ ```bash
 git clone https://github.com/davidmarint/Ecommerce-anly.git
+cd ecommerce_anly
+ ```
 
-2. Navega al directorio del proyecto
+2. instala las dependencias de Flutter desde el terminal 
+ ```bash
+ flutter pub get
+ ```
 
-3. instala las dependencias de Flutter desde el terminal 
-
- - flutter pub get
-
-4. Configura Firebase
-Asegúrate de tener un proyecto en Firebase Console y sigue estos pasos:
-
-🔹 Android:
-Coloca tu archivo google-services.json en:
-
-- android/app/google-services.json
-
-🔹 iOS:
-Coloca tu archivo GoogleService-Info.plist en:
-
-- ios/Runner/GoogleService-Info.plist
-
-5. Corre la aplicación
+3. Corre la aplicación
 Conecta un emulador o dispositivo físico y ejecuta:
-
-- flutter run
+ ```bash
+ flutter run
+ ```
 
 ---
 
@@ -102,6 +91,6 @@ Conecta un emulador o dispositivo físico y ejecuta:
 
 - Carrito de compras
 
--  Pasarela de pago (pendiente)
+- Pasarela de pago (pendiente)
 
 ---
